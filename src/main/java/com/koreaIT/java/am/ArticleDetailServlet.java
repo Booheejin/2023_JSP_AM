@@ -33,6 +33,7 @@ public class ArticleDetailServlet extends HttpServlet {
 			conn = DriverManager.getConnection(url, "root", "");
 			
 			int id = Integer.parseInt(request.getParameter("id"));
+			
 			SecSql sql = new SecSql();
 
 			sql.append("SELECT * FROM article");
@@ -41,8 +42,6 @@ public class ArticleDetailServlet extends HttpServlet {
 			Map<String, Object> articleRow = DBUtil.selectRow(conn, sql);
 
 			request.setAttribute("articleRow", articleRow);
-
-			request.setAttribute("articleListMap", articleRow);
 
 			request.getRequestDispatcher("/jsp/article/detail.jsp").forward(request, response);
 

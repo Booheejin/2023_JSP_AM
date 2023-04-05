@@ -20,10 +20,10 @@
 	
 			<h1><%= (int) articleRow.get("id") %>번 게시물</h1>
 	<ul>
-			<li>>번호 : <%= (int) articleRow.get("id") %></li>
-			<li>>번호 : <%= (LocalDateTime) articleRow.get("regDate") %></li>
-			<li>>번호 : <%= (String) articleRow.get("title") %></li>
-			<li>>번호 : <%= (String) articleRow.get("body") %></li>
+			<li>번호 : <%= (int) articleRow.get("id") %></li>
+			<li>날짜 : <%= (LocalDateTime) articleRow.get("regDate") %></li>
+			<li>제목 : <%= (String) articleRow.get("title") %></li>
+			<li>내용 : <%= (String) articleRow.get("body") %></li>
 	</ul>
 	<div><a href="list">목록</a></div>
 	
