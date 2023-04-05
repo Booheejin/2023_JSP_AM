@@ -24,6 +24,7 @@
 		} 
 		%>
 	</ul>
+	<div><a href="../home/main">메인 페이지</a></div>
 	
 	
 </body>
