@@ -20,6 +20,9 @@
 <body>
 	<h1>게시물 리스트</h1>
 	<div><a href="../home/main">메인 페이지</a></div>
+	<div>
+		<a href="write">글쓰기</a>
+	</div>
 	
 	
 	<table border="1">
