@@ -25,7 +25,10 @@
 			<li>제목 : <%= (String) articleRow.get("title") %></li>
 			<li>내용 : <%= (String) articleRow.get("body") %></li>
 	</ul>
-	<div><a href="list">목록</a></div>
+	<div>
+		<a href="list">목록</a>
+		<a href="dodelete?id=<%= (int) articleRow.get("id") %>">삭제</a>
+	</div>
 	
 </body>
 </html>
