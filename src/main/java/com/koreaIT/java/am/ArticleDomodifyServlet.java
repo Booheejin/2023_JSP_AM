@@ -14,8 +14,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/article/dowrite")
-public class ArticleDoWriteServlet extends HttpServlet {
+@WebServlet("/article/domodify")
+public class ArticleDomodifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Override
@@ -30,20 +30,22 @@ public class ArticleDoWriteServlet extends HttpServlet {
 			String url = "jdbc:mysql://127.0.0.1:3306/JSPTest?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeNehavior=convertToNull";
 
 			conn = DriverManager.getConnection(url, "root", "");
+
 			
+			int id = Integer.parseInt(request.getParameter("id"));
 			String title = request.getParameter("title");
 			String body = request.getParameter("body");
 			
 			
-			SecSql sql = SecSql.from("INSERT INTO article");
-			sql.append("SET regDate = NOW()");
-			sql.append(", updateDate = NOW()");
+			SecSql sql = SecSql.from("UPDATE article");
+			sql.append("SET updateDate = NOW()");
 			sql.append(", title = ?" ,title);
-			sql.append(", `body` =?",body);
+			sql.append(", `body` = ?",body);
+			sql.append("WHERE id = ?",id);
 			
-			int id = DBUtil.insert(conn, sql);
+			DBUtil.update(conn, sql);
 		
-			response.getWriter().append(String.format("<script>alert('%d번 글이 생성 되었습니다.');location.replace('list');</script>",id));
+			response.getWriter().append(String.format("<script>alert('%d번 글이 수정 되었습니다.');location.replace('detail?id=%d');</script>",id,id));
 			
 
 		} catch (ClassNotFoundException e) {
