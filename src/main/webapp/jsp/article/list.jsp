@@ -43,6 +43,7 @@
 			<td><%= articleMap.get("id") %></td>
 			<td><%= articleMap.get("regDate") %></td>
 			<td><a href="detail?id=<%= articleMap.get("id") %>"><%= articleMap.get("title") %></a></td>
+			<td><%= articleMap.get("writerName") %></td>
 		</tr>
 		<% } %> 
 	</table>

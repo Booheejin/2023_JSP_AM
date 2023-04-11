@@ -22,6 +22,7 @@
 	<ul>
 			<li>번호 : <%= (int) articleRow.get("id") %></li>
 			<li>날짜 : <%= (LocalDateTime) articleRow.get("regDate") %></li>
+			<li>작성자 : <%= (String) articleRow.get("writerName") %></li>
 			<li>제목 : <%= (String) articleRow.get("title") %></li>
 			<li>내용 : <%= (String) articleRow.get("body") %></li>
 	</ul>
