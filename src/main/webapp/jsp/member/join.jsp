@@ -11,7 +11,7 @@
 	
 	<script>
 		
-		function JoinFormSubmit(form){
+		function JoinForm_Submit(form){
 			
 			form.loginId.value = form.loginId.value.trim();
 			form.loginPw.value = form.loginId.value.trim();
@@ -23,16 +23,19 @@
 				form.loginId.focus();
 				return;
 			}
+			
 			if(form.loginPw.value.length == 0){
 				alert('비밀번호를 입력해주세요');
 				form.loginPw.focus();
 				return;
 			}
+			
 			if(form.loginPwChk.value.length == 0){
 				alert('비밀번호 확인을 입력해주세요');
 				form.loginPwChk.focus();
 				return;
 			}
+			
 			if(form.name.value.length == 0){
 				alert('이름을 입력해주세요');
 				form.name.focus();
