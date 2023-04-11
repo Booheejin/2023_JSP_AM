@@ -22,7 +22,8 @@ public class MainPageServlet extends HttpServlet {
 		if (session.getAttribute("loginedMemberId") != null) {
 			loginedMemberId = (int) session.getAttribute("loginedMemberId");
 		}
-
+		
+		request.setAttribute("loginedMemberLoginId", session.getAttribute("loginedMemberLoginId"));
 		request.setAttribute("loginedMemberId", loginedMemberId);
 		
 		request.getRequestDispatcher("/jsp/home/main.jsp").forward(request, response);

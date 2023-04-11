@@ -22,6 +22,7 @@
 <body>
 	<h1>게시물 리스트</h1>
 	<div><a href="../home/main">메인 페이지</a></div>
+	<%@ include file="../topBar/topBar.jsp" %>
 	<div>
 		<a href="write">글쓰기</a>
 	</div>
@@ -37,6 +38,7 @@
 			<th>번호</th>
 			<th>날짜</th>
 			<th>제목</th>
+			<th>작성자</th>
 		</tr>
 		<% for(Map<String, Object> articleMap : articleListMap) {%> 
 		<tr>
